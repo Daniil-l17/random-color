@@ -2,15 +2,15 @@ const btn = document.querySelector('button')
 const colorBG = document.querySelector('.colorRgb')
 const h1 = document.querySelector('h1')
 const copyBtn = document.querySelector('.copyBtn')
+const randomStringArray = ['e', 'c', 'b', 'a', 'f', 'd', '0', '1', '2', '3', '4', '5', '6', '7', '8', '9']
 
 btn.onclick = () => {
-  let result = ''
+  let resultStringColor = ''
   for (i = 0; i < 6; i++) {
-    const m = ['e', 'c', 'b', 'a', 'f', 'd', '0', '1', '2', '3', '4', '5', '6', '7', '8', '9']
-    result += m[Math.floor(Math.random() * m.length)]
+    resultStringColor += randomStringArray[Math.floor(Math.random() * randomStringArray.length)]
   }
-  colorBG.style.background = `#${result}`
-  h1.innerText = `#${result}`
+  colorBG.style.background = `#${resultStringColor}`
+  h1.innerText = `#${resultStringColor}`
 }
 
 copyBtn.onclick = () => {
